@@ -169,15 +169,15 @@ paths:
         - BearerAuth: []
 
   # GET PRODUCAO POR RANGE DE ANOS
-  /producao/{year_start}/{year_end}:
+  /producao:
     get:
       tags:
         - "Produção"
       summary: "Obtém dados de produção por intervalo de anos"
       description: "Retorna uma lista de registros de produção agrícola filtrados pelo intervalo de anos solicitado (inclusive)"
       parameters:
-        - name: year_start
-          in: path
+        - name: ano_inicio
+          in: query
           description: "Ano inicial do intervalo (1970-2023)"
           required: true
           schema:
@@ -186,8 +186,8 @@ paths:
             minimum: 1970
             maximum: 2023
             example: 2000
-        - name: year_end
-          in: path
+        - name: ano_fim
+          in: query
           description: "Ano final do intervalo (1970-2023)"
           required: true
           schema:
@@ -235,6 +235,7 @@ paths:
           description: "Erro interno no servidor"
       security:
         - BearerAuth: []
+
 
   # PROCESSAMENTO VINIFERAS BY YEAR
   /processamento/viniferas/{year}:
