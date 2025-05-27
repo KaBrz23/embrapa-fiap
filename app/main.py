@@ -12,7 +12,7 @@ from controllers import (
 
 # Carrega o YAML
 def load_openapi():
-    BASE_DIR = Path(__file__).resolve().parent.parent.parent
+    BASE_DIR = Path(__file__).resolve().parent.parent
     with open(BASE_DIR / "openapi.yaml", encoding='utf-8') as f:
         return yaml.safe_load(f)
 
