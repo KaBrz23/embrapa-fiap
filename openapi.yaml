@@ -5,8 +5,8 @@ info:
   version: 1.0.0
 
 servers:
-  - url: http://localhost:8000/api/v1
-    description: Servidor local
+  - url: https://embrapa-fiap.onrender.com/api/v1
+    description: Servidor Render
 
 
 security:
