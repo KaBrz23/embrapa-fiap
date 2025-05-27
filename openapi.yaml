@@ -5,10 +5,8 @@ info:
   version: 1.0.0
 
 servers:
-  - url: http://127.0.0.1:8000/api/v1
+  - url: http://localhost:8000/api/v1
     description: Servidor local
-  - url: https://autenticacao-api.onrender.com/api/v1
-    description: Servidor de produção
 
 
 security:
