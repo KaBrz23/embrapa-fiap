@@ -1,7 +1,7 @@
 from fastapi import FastAPI, APIRouter
 from pathlib import Path
 import yaml
-from controllers import (
+from app.controllers import (
     auth_controller, 
     producao_controller, 
     processamento_controller,
