@@ -1,4 +1,5 @@
 from fastapi import FastAPI, APIRouter
+from fastapi.middleware.cors import CORSMiddleware
 from pathlib import Path
 import yaml
 from controllers import (
@@ -16,7 +17,6 @@ def load_openapi():
     with open(BASE_DIR / "openapi.yaml", encoding='utf-8') as f:
         return yaml.safe_load(f)
 
-
 app = FastAPI(
     title="API EMBRAPA",
     description="API para gerenciar Produção, Processamento, Comercialização, Importação e Exportação.",
@@ -24,6 +24,15 @@ app = FastAPI(
     docs_url="/docs",
     redoc_url="/redoc",
     openapi_url="/openapi.json"
+)
+
+# Libera CORS para todas as origens
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # libera todas as origens
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # roteador principal
