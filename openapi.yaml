@@ -7,6 +7,9 @@ info:
 servers:
   - url: http://127.0.0.1:8000/api/v1
     description: Servidor local
+  - url: https://autenticacao-api.onrender.com/api/v1
+    description: Servidor de produção
+
 
 security:
   - BearerAuth: []  # Isso força o Swagger UI a mostrar o botão Authorize
